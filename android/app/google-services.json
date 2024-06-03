@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "694653529668",
+    "project_id": "taskwise-470d7",
+    "storage_bucket": "taskwise-470d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694653529668:android:80453e3cda3d5c81d51611",
+        "android_client_info": {
+          "package_name": "com.example.taskwise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFdUOVlC-dIvPScvTobvNHGAbqFr5emBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

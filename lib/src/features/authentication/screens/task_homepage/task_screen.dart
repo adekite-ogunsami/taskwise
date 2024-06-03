@@ -1,68 +1,67 @@
 import 'package:flutter/material.dart';
 
-
-class Task {
-  final String name;
-  final String description;
-  final String priority;
-  String status;
-  final String dueDate;
-
-  Task(this.name, this.description, this.priority, this.status, this.dueDate);
+class AddTaskScreen extends StatefulWidget {
+  @override
+  _AddTaskScreenState createState() => _AddTaskScreenState();
 }
 
-class TaskManager {
-  List<Task> tasks = [];
+class _AddTaskScreenState extends State<AddTaskScreen> {
+  TextEditingController _taskNameController = TextEditingController();
+  TextEditingController _taskDescriptionController = TextEditingController();
+  TextEditingController _taskPriorityController = TextEditingController();
+  TextEditingController _taskDueDateController = TextEditingController();
 
-  void addTask(Task task) {
-    tasks.add(task);
-  }
-
-  void updateTaskStatus(String taskName, String newStatus) {
-    Task task = tasks.firstWhere((task) => task.name == taskName);
-    if (task != null) {
-      task.status = newStatus;
-    }
-  }
-
-  void deleteTask(String taskName) {
-    tasks.removeWhere((task) => task.name == taskName);
-  }
-}
-
-class MyApp extends StatelessWidget {
-  final TaskManager taskManager = TaskManager();
+  get taskManager => null;
 
   @override
   Widget build(BuildContext context) {
-    Task task1 = Task(
-        "Complete project", "Finish the coding project", "High", "Incomplete", "2022-12-31");
-    Task task2 = Task("Meeting with team", "Discuss upcoming plans", "Medium", "Incomplete", "2022-11-15");
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Add Task'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: _taskNameController,
+              decoration: InputDecoration(labelText: 'Task Name'),
+            ),
+            TextField(
+              controller: _taskDescriptionController,
+              decoration: InputDecoration(labelText: 'Task Description'),
+            ),
+            TextField(
+              controller: _taskPriorityController,
+              decoration: InputDecoration(labelText: 'Priority'),
+            ),
+            TextField(
+              controller: _taskDueDateController,
+              decoration: InputDecoration(labelText: 'Due Date'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                String name = _taskNameController.text;
+                String description = _taskDescriptionController.text;
+                String priority = _taskPriorityController.text;
+                String dueDate = _taskDueDateController.text;
 
-    taskManager.addTask(task1);
-    taskManager.addTask(task2);
+                Task newTask = Task(name, description, priority, 'Incomplete', dueDate);
+                taskManager.addTask(newTask);
 
-    taskManager.updateTaskStatus("Complete project", "Complete");
-
-    taskManager.deleteTask("Meeting with team");
-
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Task Management App'),
-        ),
-        body: ListView.builder(
-          itemCount: taskManager.tasks.length,
-          itemBuilder: (context, index) {
-            Task task = taskManager.tasks[index];
-            return ListTile(
-              title: Text(task.name),
-              subtitle: Text(task.description),
-              trailing: Text(task.status),
-            );
-          },
+                Navigator.pop(context); // Navigate back to the previous screen
+              },
+              child: Text('Save Task'),
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+class Task {
+  Task(String name, String description, String priority, String s, String dueDate);
 }

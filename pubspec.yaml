@@ -21,6 +21,11 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   flutter_native_splash: ^2.4.0
   lottie: ^3.1.2
+  flutter_svg: ^2.0.10+1
+  flutter_otp_text_field: ^1.1.1
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.20.0
+  flutter_form_builder: ^9.2.1
 
 dev_dependencies:
   flutter_test:
@@ -55,9 +60,15 @@ flutter:
      - assets/images/on_boarding_images/onBoarding4.png
      - assets/animations/welcome_screen/
      - assets/animations/welcome_screen/Animation - 1716816869538.json
+     - assets/animations/welcome_screen/Animation - 1716816309883.json
      - assets/images/login/undraw_Studying_re_deca-removebg-preview (1).png
      - assets/images/login/undraw_education_f8ru-removebg-preview.png
+     - assets/images/welcome/undraw_task_list_6x9d-removebg-preview.png
+     - assets/images/welcome/undraw_task_list_6x9d-removebg-preview (1).png
+     - assets/images/signup/undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41__1__kf4d-removebg-preview.png
      - assets/logo/png-transparent-google-logo-google-text-trademark-logo-removebg-preview.png
+     - assets/images/otp/undraw_Authentication_re_svpt-removebg-preview (1).png
+     - assets/images/forget_password/undraw_Forgot_password_re_hxwm-removebg-preview (1).png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -5,6 +5,8 @@ import 'dart:ui';
 const tPrimaryColor = Color(0xFF12557B);
 const tSecondaryColor = Color(0xFFA3E062);
 const tAccentColor = Color(0xFF10828D);
+const tAccentLightColor = Color(0xFFF2F3EE);
+const tAccentDarkColor = Color(0xFF011011);
 
 const tDarkBg = Color(0xFF02202A);
 const tLightBg = Color(0xFFFFFFFF);

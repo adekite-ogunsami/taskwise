@@ -1,13 +1,24 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:taskwise/src/features/authentication/screens/forget_password/forget_password_options/forget_password_model_bottom_sheet.dart';
 
 import '../../../../constants/sizes.dart';
 import '../../../../constants/text_strings.dart';
+import '../forget_password/forget_password_options/forgot_password_btn_widget.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({
-    super.key,
-  });
+
+  class LoginFormWidget extends StatefulWidget {
+  const LoginFormWidget({super.key});
+
+  @override
+  _LoginFormWidgetState createState() => _LoginFormWidgetState();
+  }
+
+  class _LoginFormWidgetState extends State<LoginFormWidget> {
+  bool _obscurePassword = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +36,9 @@ class LoginForm extends StatelessWidget {
                   ),
                   // labelText: tEmail,
                   hintText: tEmail,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide(color: Colors.grey),
-                  ),
               ),
             ),
-            SizedBox(height: tFormHeight - 20),
+            const SizedBox(height: tFormHeight - 20),
             TextFormField(
               decoration: InputDecoration(
                 prefixIcon: Padding(
@@ -47,33 +47,31 @@ class LoginForm extends StatelessWidget {
                 ),
                 // labelText: tPassword,
                 hintText: tPassword,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
                 suffixIcon: Padding(
                   padding: EdgeInsets.only(left: 10.0, right:5.0),
                   child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.remove_red_eye_outlined),
+                    onPressed: () {
+                      setState(() {
+                        _obscurePassword = !_obscurePassword;
+                      });
+                    },
+                    icon: Icon(
+                      _obscurePassword
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                    ),
                   ),
                 ),
-
               ),
-              obscureText: true,
+              obscureText: _obscurePassword,
             ),
             const SizedBox(height: tFormHeight - 20),
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                  onPressed: () {}, child: Text.rich(
+                  onPressed: () {
+                    ForgetPasswordScreen.buildShowModalBottomSheet(context);
+                  }, child: const Text.rich(
                         TextSpan(
                           text: tForgetPassword,
                           style: TextStyle(color: Colors.blue),
@@ -92,4 +90,7 @@ class LoginForm extends StatelessWidget {
       ),
     );
   }
+
+
 }
+

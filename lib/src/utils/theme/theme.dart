@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:taskwise/src/utils/theme/text_theme.dart';
 import 'package:taskwise/src/utils/theme/widget_themes/elevated_button_theme.dart';
 import 'package:taskwise/src/utils/theme/widget_themes/outlined_button_theme.dart';
+import 'package:taskwise/src/utils/theme/widget_themes/text_field_theme.dart';
 
 class TaskwiseTheme{
   TaskwiseTheme._();
@@ -11,6 +12,7 @@ class TaskwiseTheme{
     textTheme:TaskwiseTextTheme.lightTextTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
+    inputDecorationTheme: TTextFormField.lightInputDecorationTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -18,5 +20,6 @@ class TaskwiseTheme{
     textTheme: TaskwiseTextTheme.darkTextTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
+    inputDecorationTheme: TTextFormField.darkInputDecorationTheme,
   );
 }

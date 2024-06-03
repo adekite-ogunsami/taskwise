@@ -9,6 +9,7 @@ import 'package:taskwise/src/constants/sizes.dart';
 import 'package:taskwise/src/constants/text_strings.dart';
 import 'package:taskwise/src/features/authentication/screens/login/login_screen.dart';
 import 'package:taskwise/src/features/authentication/screens/signup/signup_screen.dart';
+import '../../../../constants/image_strings.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -25,10 +26,9 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Lottie.asset(
-              'assets/animations/welcome_screen/Animation - 1716816869538.json',
-              height: height * 0.5,
-              frameRate: FrameRate.composition,
+            Image.asset(
+              tWelcomeImage,
+              height: height * 0.4,
             ),
             Column(
                 // GoogleFonts.dmSans(textStyle: TextStyle( fontSize: 22, fontWeight: FontWeight.bold,))

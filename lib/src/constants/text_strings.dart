@@ -39,3 +39,19 @@ const String tSignInWithGoogle = "Sign-In with Google";
 const String tSignupTitle = "Get Started!";
 const String tSignupSubTitle = "Create your account and boost your productivity.";
 const String tAlreadyHaveAnAccount = "Already have an account? ";
+const String tFullName = "Enter Your Full Name";
+const String tPhone = "Phone Number";
+const String tCreatePassword = "Password";
+const String tConfirmPassword = "Confirm Password";
+const String tUsername = "Create your username";
+//Forget Password Text
+const String tForgetPasswordTitle = "Step One!";
+const String tForgetPasswordSubTitle = "Use your registered E-mail address to reset your password with an OTP. ";
+const String tForgetPasswordEmail = "Kindly enter your registered email address to receive an OTP";
+const String tResetViaEmail = "Reset via E-mail\nVerification";
+const String  tResetViaPhone= "Reset via Phone Verification";
+//OTP Screen Text
+const String tOTPTitle = "Verification";
+const String tOTPSubtitle = "Enter the verification code sent to your email address";
+//Misc
+const String  tNext= "Next";
